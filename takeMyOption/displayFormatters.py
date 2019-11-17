@@ -7,10 +7,10 @@ def getDefaultDisplayFormatter(optionDataObj):
     """Return the default format for displaying Options.
 
     Args:
-        optionDataObj: instance of OptionData class
+        optionDataObj(:obj:`~takeMyOption.options.OptionData`): instance of OptionData class
 
     Returns:
-        An instance of DisplayFrame class containing the format for display.
+        :obj:`~takeMyOption.displayFrame.DisplayFrame`: Instance containing the format for display.
     """
     displayFormat = DisplayFrame()
 

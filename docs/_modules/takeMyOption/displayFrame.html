@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>takeMyOption.displayFrame &mdash; Take An Option 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Take An Option
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference.html">Code Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Take An Option</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>takeMyOption.displayFrame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for takeMyOption.displayFrame</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.exceptions</span> <span class="k">import</span> <span class="n">DisplayFrameException</span>
+
+
+<div class="viewcode-block" id="DisplayFrame"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame">[docs]</a><span class="k">class</span> <span class="nc">DisplayFrame</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__current_row</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__padding</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<div class="viewcode-block" id="DisplayFrame.setPadding"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.setPadding">[docs]</a>    <span class="k">def</span> <span class="nf">setPadding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paddingVal</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set padding value for the Display Frame.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            paddingVal(:obj:`int`): padding value</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If paddingVal</span>
+<span class="sd">                is not a positive integer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paddingVal</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;paddingVal argument should be an integer, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">paddingVal</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">paddingVal</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">paddingVal</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;paddingVal argument cannot be less than zero&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__padding</span> <span class="o">=</span> <span class="n">paddingVal</span></div>
+
+<div class="viewcode-block" id="DisplayFrame.startFrameRow"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.startFrameRow">[docs]</a>    <span class="k">def</span> <span class="nf">startFrameRow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">showBorder</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">showDivider</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Start a new row in the Display Frame.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            showBorder(:obj:`bool`, optional): Determines whether to display Border for the row.</span>
+<span class="sd">            showDivider(:obj:`bool`, optional): Determines whether to display divider between rows.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If showBorder</span>
+<span class="sd">                or showDivider is not a boolean value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">showBorder</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;showBorder argument should be a boolean, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">showBorder</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">showBorder</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">showDivider</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;showDivider argument should be a boolean, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">showDivider</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">showDivider</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;showBorder&quot;</span> <span class="p">:</span> <span class="n">showBorder</span><span class="p">,</span>
+            <span class="s2">&quot;showDivider&quot;</span> <span class="p">:</span> <span class="n">showDivider</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__current_row</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="DisplayFrame.frameData"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.frameData">[docs]</a>    <span class="k">def</span> <span class="nf">frameData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">colSpan</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a data cell to the Display Frame Row.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data(:obj:`str`): The Raw data which is to be added to the cell.</span>
+<span class="sd">            align(:obj:`str`, optional): Alignment choice for cell data.</span>
+
+<span class="sd">                Valid align choices :</span>
+<span class="sd">                    &quot;left&quot; : left-align the data,</span>
+<span class="sd">                    &quot;right&quot; : right-align the data,</span>
+<span class="sd">                    &quot;center&quot; : center-align the data,</span>
+<span class="sd">                    &quot;fill&quot; : fill the complete cell width with data repeated.</span>
+<span class="sd">            colSpan(:obj:`int`, optional): Number of columns the cell spans for.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If align is</span>
+<span class="sd">                not a valid keyword or if colSpan is not a positive Integer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">align</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="s2">&quot;fill&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;align argument has to be one among&quot;</span>
+                <span class="s2">&quot; these options - left, right, center, fill. Invalid value : &quot;</span>
+                <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">align</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colSpan</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">colSpan</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;colSpan argument has to be a positive&quot;</span>
+                <span class="s2">&quot; integer value. Invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">colSpan</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">colSpan</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__current_row</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">align</span><span class="p">,</span> <span class="n">colSpan</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="DisplayFrame.endFrameRow"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.endFrameRow">[docs]</a>    <span class="k">def</span> <span class="nf">endFrameRow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;End a row in the Display Frame.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__current_row</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__current_row</span></div>
+
+<div class="viewcode-block" id="DisplayFrame.insertBlankRow"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.insertBlankRow">[docs]</a>    <span class="k">def</span> <span class="nf">insertBlankRow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colSpan</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Insert a completely Blank Row.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            colSpan(:obj:`int`, optional): Number of columns the cell spans for.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If colSpan is</span>
+<span class="sd">                not a positive Integer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colSpan</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">colSpan</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;colSpan argument has to be a positive&quot;</span>
+                <span class="s2">&quot; integer value. Invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">colSpan</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">colSpan</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">[(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="n">colSpan</span><span class="p">)],</span>
+            <span class="s2">&quot;showBorder&quot;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;showDivider&quot;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">}</span></div>
+
+    <span class="k">def</span> <span class="nf">__measureColumnWidths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dividerLen</span><span class="p">):</span>
+        <span class="n">__columnWidths</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">__span</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">__no_more_update</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">for</span> <span class="n">__row_indx</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">__row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="n">__row_indx</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+                <span class="n">__i</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">__c_data</span><span class="p">,</span> <span class="n">__c_align</span><span class="p">,</span> <span class="n">__c_span</span><span class="p">)</span> <span class="ow">in</span> <span class="n">__row</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">__c_span</span> <span class="o">==</span> <span class="n">__span</span><span class="p">:</span>
+                        <span class="n">__no_more_update</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">__width_now</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">__columnWidths</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">__j</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> \
+                            <span class="k">for</span> <span class="n">__j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">__i</span><span class="p">,</span> <span class="n">__i</span> <span class="o">+</span> <span class="n">__span</span><span class="p">)])</span> <span class="o">+</span> <span class="p">(</span><span class="n">dividerLen</span> <span class="o">*</span> <span class="p">(</span><span class="n">__span</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                        <span class="n">__data_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">__c_data</span><span class="p">)</span>
+                        <span class="k">while</span> <span class="n">__width_now</span> <span class="o">&lt;</span> <span class="n">__data_len</span><span class="p">:</span>
+                            <span class="k">for</span> <span class="n">__j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">__i</span><span class="p">,</span> <span class="n">__i</span> <span class="o">+</span> <span class="n">__span</span><span class="p">):</span>
+                                <span class="n">__columnWidths</span><span class="p">[</span><span class="n">__j</span><span class="p">]</span> <span class="o">=</span> <span class="n">__columnWidths</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">__j</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+                                <span class="n">__width_now</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">__i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">__no_more_update</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">__span</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">__columnWidths</span>
+
+<div class="viewcode-block" id="DisplayFrame.render"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.render">[docs]</a>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">divider</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">leftBorder</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">rightBorder</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Renders the complete Display Frame.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            divider(:obj:`str`, optional): The divider to use between columns in Frame.</span>
+<span class="sd">            leftBorder(:obj:`str`, optional) : The left-most border for the Frame.</span>
+<span class="sd">            rightBorder(:obj:`str`, optional) : The right-most border for the Frame.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :obj:`str`: The complete Display Frame to be printed.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If either of</span>
+<span class="sd">                divider, leftBorder or rightBorder is not a String.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">__n</span><span class="p">,</span> <span class="n">__t</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;divider&quot;</span><span class="p">,</span> <span class="n">divider</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;leftBorder&quot;</span><span class="p">,</span> <span class="n">leftBorder</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;rightBorder&quot;</span><span class="p">,</span> <span class="n">rightBorder</span><span class="p">)]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">__t</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">DisplayFrameException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> argument should be a String,&quot;</span>
+                    <span class="s2">&quot; invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">__n</span><span class="p">,</span> <span class="n">__t</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">__t</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+
+        <span class="n">__col_widths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__measureColumnWidths</span><span class="p">(</span><span class="n">dividerLen</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">divider</span><span class="p">))</span>
+
+        <span class="n">__row_strings</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">__row_indx</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">__row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="n">__row_indx</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+            <span class="n">__showBorder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="n">__row_indx</span><span class="p">][</span><span class="s2">&quot;showBorder&quot;</span><span class="p">]</span>
+            <span class="n">__showDivider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span><span class="p">[</span><span class="n">__row_indx</span><span class="p">][</span><span class="s2">&quot;showDivider&quot;</span><span class="p">]</span>
+            <span class="n">__row_str</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">__col_index</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">__col_data</span><span class="p">,</span> <span class="n">__col_align</span><span class="p">,</span> <span class="n">__col_span</span><span class="p">)</span> <span class="ow">in</span> <span class="n">__row</span><span class="p">:</span>
+                <span class="n">__col_width</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">__col_widths</span><span class="p">[</span><span class="n">__i</span><span class="p">]</span> \
+                    <span class="k">for</span> <span class="n">__i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">__col_index</span><span class="p">,</span> <span class="n">__col_index</span> <span class="o">+</span> <span class="n">__col_span</span><span class="p">)])</span> \
+                    <span class="o">+</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">divider</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__padding</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">__col_span</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="n">__row_cell_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="k">if</span> <span class="n">__col_align</span> <span class="o">==</span> <span class="s2">&quot;left&quot;</span><span class="p">:</span>
+                    <span class="n">__row_cell_data</span> <span class="o">=</span> <span class="s2">&quot;{s:&lt;</span><span class="si">{w}</span><span class="s2">}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">__col_data</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">__col_width</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">__col_align</span> <span class="o">==</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span>
+                    <span class="n">__row_cell_data</span> <span class="o">=</span> <span class="s2">&quot;{s:&gt;</span><span class="si">{w}</span><span class="s2">}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">__col_data</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">__col_width</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">__col_align</span> <span class="o">==</span> <span class="s2">&quot;center&quot;</span><span class="p">:</span>
+                    <span class="n">__row_cell_data</span> <span class="o">=</span> <span class="s2">&quot;{s:^</span><span class="si">{w}</span><span class="s2">}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">__col_data</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">__col_width</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">__col_align</span> <span class="o">==</span> <span class="s2">&quot;fill&quot;</span><span class="p">:</span>
+                    <span class="n">__row_cell_data</span> <span class="o">=</span> <span class="n">__col_data</span> <span class="o">*</span> <span class="n">__col_width</span>
+                    <span class="n">__row_cell_data</span> <span class="o">=</span> <span class="n">__row_cell_data</span><span class="p">[:</span><span class="n">__col_width</span><span class="p">]</span>
+                <span class="n">__row_str</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{padding}{data}{padding}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">padding</span><span class="o">=</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__padding</span><span class="p">,</span>
+                    <span class="n">data</span><span class="o">=</span><span class="n">__row_cell_data</span><span class="p">))</span>
+                <span class="n">__col_index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">__row_strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{lBorder}{content}{rBorder}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">lBorder</span><span class="o">=</span><span class="n">leftBorder</span> <span class="k">if</span> <span class="n">__showBorder</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>
+                <span class="n">rBorder</span><span class="o">=</span><span class="n">rightBorder</span> <span class="k">if</span> <span class="n">__showBorder</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>
+                <span class="n">content</span><span class="o">=</span><span class="n">divider</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">__row_str</span><span class="p">)</span> <span class="k">if</span> <span class="n">__showDivider</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">__row_str</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">__row_strings</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DisplayFrame.clearFrame"><a class="viewcode-back" href="../../reference.html#takeMyOption.displayFrame.DisplayFrame.clearFrame">[docs]</a>    <span class="k">def</span> <span class="nf">clearFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Clear all data from the current Display Frame.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__rows</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__current_row</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__row_indx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span></div>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, dvaruas
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

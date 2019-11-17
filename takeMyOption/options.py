@@ -6,11 +6,13 @@ class OptionData:
         """Constructor for OptionData.
 
         Args:
-            strictCheck: Whether to strictly check entries made as options. (Boolean, default : True)
-                         Better to have it as True, else might cause inconsistencies.
+            strictCheck(:obj:`bool`, optional): Whether to strictly check entries
+                made as options. Better to have it as True, else might cause
+                inconsistencies.
 
         Raises:
-            OptionException: If strictCheck is not a Boolean Value.
+            :obj:`~takeMyOption.exceptions.OptionException`: If strictCheck is
+                not a Boolean Value.
         """
         if not isinstance(strictCheck, bool):
             raise OptionException(self, "strictCheck argument must be Boolean, "
@@ -25,10 +27,11 @@ class OptionData:
         """Set the banner for the options.
 
         Args:
-            bannerText: Text to be the banner for the options. (String, default : "Options")
+            bannerText(:obj:`str`, optional): Text to be the banner for the options.
 
         Raises:
-            OptionException: if bannerText is not a valid String.
+            :obj:`~takeMyOption.exceptions.OptionException`: If bannerText is not
+                a valid String.
         """
         if bannerText and isinstance(bannerText, str):
             self.__banner = bannerText
@@ -37,14 +40,14 @@ class OptionData:
                 "invalid value : {}(type : {})".format(bannerText, type(bannerText).__name__))
 
     def getBanner(self):
-        """Return the banner for the options."""
+        """Return the banner set for the options."""
         return self.__banner
 
     def setPrompt(self, prompt="Enter choice"):
         """Set the prompt text for options.
 
         Args:
-            prompt: Text to be the prompt for the options. (String, default : "Enter choice")
+            prompt(:obj:`str`, optional): Text to be the prompt for the options.
 
         Raises:
             OptionException: if prompt is not a valid String.
@@ -63,18 +66,18 @@ class OptionData:
         """Add a new option choice.
 
         Args:
-            optionText: Text to display with the Option. (String)
-            optionID: The ID to be associated with this option. (String or Integer, default : None)
-                      If not provided, one will be generated internally.
-            **kwargs : Additional Keyword arguments associated with option.
+            optionText(:obj:`str`): Text to display with the Option.
+            optionID(:obj:`str` or :obj:`int`, optional): The ID to be associated
+                with this option. If not provided, one will be generated internally.
+            ``**kwargs`` : Additional Keyword arguments associated with option.
 
         Returns:
-            The optionID for this option. (String)
-            Returns None if strictCheck is disabled and option was not inserted.
+            :obj:`str`: The optionID for this option. None if strictCheck is
+            disabled and option was not inserted.
 
         Raises:
-            OptionException: If optionID is not a valid Integer or String.
-                             If optionText is not a valid String.
+            :obj:`~takeMyOption.exceptions.OptionException`: If optionID is not
+                a valid Integer or String. If optionText is not a valid String.
         """
         if optionID != None and type(optionID) not in [str, int]:
             if self.__strictCheck:
@@ -108,10 +111,11 @@ class OptionData:
         """Set a default option among the Options.
 
         Args:
-            optionID: The option ID to be set as default. (String)
+            optionID(:obj:`str`): The option ID to be set as default.
 
         Raises:
-            OptionException: If the option ID has not been added as an option previously.
+            :obj:`~takeMyOption.exceptions.OptionException`: If the option ID has
+                not been added as an option previously.
         """
         if str(optionID) in self.__options:
             self.__default_option = str(optionID)
@@ -127,13 +131,14 @@ class OptionData:
         """Return the Option Text for given ID.
 
         Args:
-            optionID: The ID for which to get option text. (String)
+            optionID(:obj:`str`): The ID for which to get option text.
 
         Returns:
-            Text for the Option. (String)
+            :obj:`str`: Text for the Option.
 
         Raises:
-            OptionException: If the optionID provided was not found.
+            :obj:`~takeMyOption.exceptions.OptionException`: If the optionID
+                provided was not found.
         """
         if str(optionID) not in self.__options:
             raise OptionException(self, "optionID {} provided was not found among "
@@ -144,13 +149,14 @@ class OptionData:
         """Return dictionary of additional keyword arguments saved with an option.
 
         Args:
-            optionID: The ID for which to return keyword arguments.
+            optionID(:obj:`str`): The ID for which to return keyword arguments.
 
         Returns:
-            Keyword Arguments. (Dictionary)
+            :obj:`dict`: Keyword Arguments.
 
         Raises:
-            OptionException: If the optionID provided was not found.
+            :obj:`~takeMyOption.exceptions.OptionException`: If the optionID
+                provided was not found.
         """
         if str(optionID) not in self.__options:
             raise OptionException(self, "optionID {} provided was not found among "

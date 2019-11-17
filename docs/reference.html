@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Code Reference &mdash; Take An Option 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Take An Option!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Take An Option
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#display-frame">Display Frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#display-formatter">Display Formatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-strategies">Input Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Take An Option</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Code Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="code-reference">
+<h1>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p>Class to save all data related to an Option.</p>
+<dl class="class">
+<dt id="takeMyOption.options.OptionData">
+<em class="property">class </em><code class="descclassname">takeMyOption.options.</code><code class="descname">OptionData</code><span class="sig-paren">(</span><em>strictCheck=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="takeMyOption.options.OptionData.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>strictCheck=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for OptionData.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>strictCheck</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether to strictly check entries
+made as options. Better to have it as True, else might cause
+inconsistencies.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.OptionException" title="takeMyOption.exceptions.OptionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionException</span></code></a> – If strictCheck is
+not a Boolean Value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.addNewOption">
+<code class="descname">addNewOption</code><span class="sig-paren">(</span><em>optionText</em>, <em>optionID=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.addNewOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.addNewOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new option choice.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>optionText</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Text to display with the Option.</li>
+<li><strong>optionID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – The ID to be associated
+with this option. If not provided, one will be generated internally.</li>
+<li><strong>**kwargs</strong> – Additional Keyword arguments associated with option.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The optionID for this option. None if strictCheck is
+disabled and option was not inserted.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#takeMyOption.exceptions.OptionException" title="takeMyOption.exceptions.OptionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionException</span></code></a> – If optionID is not
+a valid Integer or String. If optionText is not a valid String.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.getAllOptionIDs">
+<code class="descname">getAllOptionIDs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.getAllOptionIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.getAllOptionIDs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the option IDs set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.getBanner">
+<code class="descname">getBanner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.getBanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.getBanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the banner set for the options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.getDefaultOption">
+<code class="descname">getDefaultOption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.getDefaultOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.getDefaultOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default option ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.getOptionArgs">
+<code class="descname">getOptionArgs</code><span class="sig-paren">(</span><em>optionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.getOptionArgs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.getOptionArgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary of additional keyword arguments saved with an option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>optionID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – The ID for which to return keyword arguments.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Keyword Arguments.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.OptionException" title="takeMyOption.exceptions.OptionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionException</span></code></a> – If the optionID
+provided was not found.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.getOptionText">
+<code class="descname">getOptionText</code><span class="sig-paren">(</span><em>optionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.getOptionText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.getOptionText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Option Text for given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>optionID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – The ID for which to get option text.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Text for the Option.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.OptionException" title="takeMyOption.exceptions.OptionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionException</span></code></a> – If the optionID
+provided was not found.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.getPrompt">
+<code class="descname">getPrompt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.getPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.getPrompt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prompt for the options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.setBanner">
+<code class="descname">setBanner</code><span class="sig-paren">(</span><em>bannerText='Options'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.setBanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.setBanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the banner for the options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bannerText</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Text to be the banner for the options.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.OptionException" title="takeMyOption.exceptions.OptionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionException</span></code></a> – If bannerText is not
+a valid String.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.setDefaultOption">
+<code class="descname">setDefaultOption</code><span class="sig-paren">(</span><em>optionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.setDefaultOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.setDefaultOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a default option among the Options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>optionID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – The option ID to be set as default.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.OptionException" title="takeMyOption.exceptions.OptionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionException</span></code></a> – If the option ID has
+not been added as an option previously.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.options.OptionData.setPrompt">
+<code class="descname">setPrompt</code><span class="sig-paren">(</span><em>prompt='Enter choice'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/options.html#OptionData.setPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.options.OptionData.setPrompt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the prompt text for options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prompt</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Text to be the prompt for the options.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OptionException</span></code> – if prompt is not a valid String.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="display-frame">
+<h2>Display Frame<a class="headerlink" href="#display-frame" title="Permalink to this headline">¶</a></h2>
+<p>Class for creating a complete frame of Display Options.</p>
+<dl class="class">
+<dt id="takeMyOption.displayFrame.DisplayFrame">
+<em class="property">class </em><code class="descclassname">takeMyOption.displayFrame.</code><code class="descname">DisplayFrame</code><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.clearFrame">
+<code class="descname">clearFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.clearFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.clearFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all data from the current Display Frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.endFrameRow">
+<code class="descname">endFrameRow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.endFrameRow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.endFrameRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>End a row in the Display Frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.frameData">
+<code class="descname">frameData</code><span class="sig-paren">(</span><em>data</em>, <em>align='left'</em>, <em>colSpan=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.frameData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.frameData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a data cell to the Display Frame Row.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – The Raw data which is to be added to the cell.</li>
+<li><strong>align</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – <p>Alignment choice for cell data.</p>
+<dl class="docutils">
+<dt>Valid align choices :</dt>
+<dd>”left” : left-align the data,
+“right” : right-align the data,
+“center” : center-align the data,
+“fill” : fill the complete cell width with data repeated.</dd>
+</dl>
+</li>
+<li><strong>colSpan</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Number of columns the cell spans for.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#takeMyOption.exceptions.DisplayFrameException" title="takeMyOption.exceptions.DisplayFrameException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplayFrameException</span></code></a> – If align is
+not a valid keyword or if colSpan is not a positive Integer.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.insertBlankRow">
+<code class="descname">insertBlankRow</code><span class="sig-paren">(</span><em>colSpan=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.insertBlankRow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.insertBlankRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a completely Blank Row.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>colSpan</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Number of columns the cell spans for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.DisplayFrameException" title="takeMyOption.exceptions.DisplayFrameException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplayFrameException</span></code></a> – If colSpan is
+not a positive Integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>divider=' '</em>, <em>leftBorder=''</em>, <em>rightBorder=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the complete Display Frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>divider</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – The divider to use between columns in Frame.</li>
+<li><strong>leftBorder</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – The left-most border for the Frame.</li>
+<li><strong>rightBorder</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – The right-most border for the Frame.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The complete Display Frame to be printed.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#takeMyOption.exceptions.DisplayFrameException" title="takeMyOption.exceptions.DisplayFrameException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplayFrameException</span></code></a> – If either of
+divider, leftBorder or rightBorder is not a String.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.setPadding">
+<code class="descname">setPadding</code><span class="sig-paren">(</span><em>paddingVal</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.setPadding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.setPadding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set padding value for the Display Frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>paddingVal</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – padding value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.exceptions.DisplayFrameException" title="takeMyOption.exceptions.DisplayFrameException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplayFrameException</span></code></a> – If paddingVal
+is not a positive integer.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.displayFrame.DisplayFrame.startFrameRow">
+<code class="descname">startFrameRow</code><span class="sig-paren">(</span><em>showBorder=True</em>, <em>showDivider=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFrame.html#DisplayFrame.startFrameRow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFrame.DisplayFrame.startFrameRow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new row in the Display Frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>showBorder</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Determines whether to display Border for the row.</li>
+<li><strong>showDivider</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Determines whether to display divider between rows.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#takeMyOption.exceptions.DisplayFrameException" title="takeMyOption.exceptions.DisplayFrameException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplayFrameException</span></code></a> – If showBorder
+or showDivider is not a boolean value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="display-formatter">
+<h2>Display Formatter<a class="headerlink" href="#display-formatter" title="Permalink to this headline">¶</a></h2>
+<p>The Default Display Format is given. Different Display Formats can be created in
+similar fashion.</p>
+<span class="target" id="module-takeMyOption.displayFormatters"></span><dl class="function">
+<dt id="takeMyOption.displayFormatters.getDefaultDisplayFormatter">
+<code class="descclassname">takeMyOption.displayFormatters.</code><code class="descname">getDefaultDisplayFormatter</code><span class="sig-paren">(</span><em>optionDataObj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/displayFormatters.html#getDefaultDisplayFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.displayFormatters.getDefaultDisplayFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default format for displaying Options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>optionDataObj</strong> (<a class="reference internal" href="#takeMyOption.options.OptionData" title="takeMyOption.options.OptionData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OptionData</span></code></a>) – instance of OptionData class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Instance containing the format for display.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#takeMyOption.displayFrame.DisplayFrame" title="takeMyOption.displayFrame.DisplayFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplayFrame</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="input-strategies">
+<h2>Input Strategies<a class="headerlink" href="#input-strategies" title="Permalink to this headline">¶</a></h2>
+<p>Ways to take Input from user in command line.</p>
+<dl class="class">
+<dt id="takeMyOption.inputStrategies.InputStrategies">
+<em class="property">class </em><code class="descclassname">takeMyOption.inputStrategies.</code><code class="descname">InputStrategies</code><span class="sig-paren">(</span><em>prompt=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/inputStrategies.html#InputStrategies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.inputStrategies.InputStrategies" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="takeMyOption.inputStrategies.InputStrategies.inputAnOption">
+<code class="descname">inputAnOption</code><span class="sig-paren">(</span><em>options</em>, <em>showOptions=False</em>, <em>defaultInput=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/inputStrategies.html#InputStrategies.inputAnOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.inputStrategies.InputStrategies.inputAnOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes choice from a list of options given to user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>options</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – A list of the choices which are valid inputs.</li>
+<li><strong>showOptions</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – show the user the options with the prompt. Eg - (1/2/3).</li>
+<li><strong>defaultInput</strong> (<em>any</em><em>, </em><em>optional</em>) – If user enters a blank string, take this value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Option entered by the user or defaultInput if provided.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#takeMyOption.exceptions.InputStrategiesException" title="takeMyOption.exceptions.InputStrategiesException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStrategiesException</span></code></a> – If options
+is not a list. If showOptions is not a boolean.
+If defaultInput is not in the options list.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="takeMyOption.inputStrategies.InputStrategies.inputRawString">
+<code class="descname">inputRawString</code><span class="sig-paren">(</span><em>defaultInput=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/inputStrategies.html#InputStrategies.inputRawString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.inputStrategies.InputStrategies.inputRawString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a Raw String as input from the user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>defaultInput</strong> (<em>any</em><em>, </em><em>optional</em>) – If user enters a blank string, take this value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String entered by the user or defaultInput if provided.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Different Exceptions raised by other classes.</p>
+<dl class="exception">
+<dt id="takeMyOption.exceptions.OptionException">
+<em class="property">exception </em><code class="descclassname">takeMyOption.exceptions.</code><code class="descname">OptionException</code><span class="sig-paren">(</span><em>thrower</em>, <em>reason</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/exceptions.html#OptionException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.exceptions.OptionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when there is any problem with setting of options.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="takeMyOption.exceptions.DisplayFrameException">
+<em class="property">exception </em><code class="descclassname">takeMyOption.exceptions.</code><code class="descname">DisplayFrameException</code><span class="sig-paren">(</span><em>thrower</em>, <em>reason</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/exceptions.html#DisplayFrameException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.exceptions.DisplayFrameException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when there is any problem while building Display Frame.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="takeMyOption.exceptions.InputStrategiesException">
+<em class="property">exception </em><code class="descclassname">takeMyOption.exceptions.</code><code class="descname">InputStrategiesException</code><span class="sig-paren">(</span><em>thrower</em>, <em>reason</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/takeMyOption/exceptions.html#InputStrategiesException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#takeMyOption.exceptions.InputStrategiesException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when there is any problem regarding taking input from user.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Take An Option!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, dvaruas
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

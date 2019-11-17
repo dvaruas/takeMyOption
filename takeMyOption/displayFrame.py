@@ -12,10 +12,11 @@ class DisplayFrame:
         """Set padding value for the Display Frame.
 
         Args:
-            paddingVal: padding value (Integer)
+            paddingVal(:obj:`int`): padding value
 
         Raises:
-            DisplayFrameException: If paddingVal is not a positive integer.
+            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If paddingVal
+                is not a positive integer.
         """
         if not isinstance(paddingVal, int):
             raise DisplayFrameException(self, "paddingVal argument should be an integer, "
@@ -28,11 +29,12 @@ class DisplayFrame:
         """Start a new row in the Display Frame.
 
         Args:
-            showBorder: Determines whether to display Border for the row. (Boolean, default : True)
-            showDivider: Determines whether to display divider between rows. (Boolean, default : True)
+            showBorder(:obj:`bool`, optional): Determines whether to display Border for the row.
+            showDivider(:obj:`bool`, optional): Determines whether to display divider between rows.
 
         Raises:
-            DisplayFrameException: If showBorder or showDivider is not a boolean value.
+            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If showBorder
+                or showDivider is not a boolean value.
         """
         if not isinstance(showBorder, bool):
             raise DisplayFrameException(self, "showBorder argument should be a boolean, "
@@ -49,18 +51,19 @@ class DisplayFrame:
         """Add a data cell to the Display Frame Row.
 
         Args:
-            data: The Raw data which is to be added to the cell. (String)
-            align: Alignment choice for cell data. (String, default : "left")
-                   Valid align choices :
-                   "left" : left-align the data
-                   "right" : right-align the data
-                   "center" : center-align the data
-                   "fill" : fill the complete cell width with data repeated
-            colSpan: Number of columns the cell spans for. (Integer, default : 1)
+            data(:obj:`str`): The Raw data which is to be added to the cell.
+            align(:obj:`str`, optional): Alignment choice for cell data.
+
+                Valid align choices :
+                    "left" : left-align the data,
+                    "right" : right-align the data,
+                    "center" : center-align the data,
+                    "fill" : fill the complete cell width with data repeated.
+            colSpan(:obj:`int`, optional): Number of columns the cell spans for.
 
         Raises:
-            DisplayFrameException: If align is not a valid keyword or
-                                   if colSpan is not a positive Integer
+            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If align is
+                not a valid keyword or if colSpan is not a positive Integer.
         """
         if align not in ["left", "right", "center", "fill"]:
             raise DisplayFrameException(self, "align argument has to be one among"
@@ -81,10 +84,11 @@ class DisplayFrame:
         """Insert a completely Blank Row.
 
         Args:
-            colSpan: Number of columns the cell spans for. (Integer, default : 1)
+            colSpan(:obj:`int`, optional): Number of columns the cell spans for.
 
         Raises:
-            DisplayFrameException: If colSpan is not a positive Integer
+            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If colSpan is
+                not a positive Integer
         """
         if not isinstance(colSpan, int) or colSpan <= 0:
             raise DisplayFrameException(self, "colSpan argument has to be a positive"
@@ -122,16 +126,16 @@ class DisplayFrame:
         """Renders the complete Display Frame.
 
         Args:
-            divider: The divider to use between columns in Frame. (String, default : " ")
-            leftBorder : The left-most border for the Frame. (String, default : "")
-            rightBorder : The right-most border for the Frame. (String, default : "")
+            divider(:obj:`str`, optional): The divider to use between columns in Frame.
+            leftBorder(:obj:`str`, optional) : The left-most border for the Frame.
+            rightBorder(:obj:`str`, optional) : The right-most border for the Frame.
 
         Returns:
-            The complete Display Frame to be printed. (String)
+            :obj:`str`: The complete Display Frame to be printed.
 
         Raises:
-            DisplayFrameException: If either of divider, leftBorder or rightBorder
-                                   is not a String.
+            :obj:`~takeMyOption.exceptions.DisplayFrameException`: If either of
+                divider, leftBorder or rightBorder is not a String.
         """
         for (__n, __t) in [("divider", divider), ("leftBorder", leftBorder), ("rightBorder", rightBorder)]:
             if not isinstance(__t, str):

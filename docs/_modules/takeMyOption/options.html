@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>takeMyOption.options &mdash; Take An Option 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Take An Option
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference.html">Code Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Take An Option</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>takeMyOption.options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for takeMyOption.options</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.exceptions</span> <span class="k">import</span> <span class="n">OptionException</span>
+
+
+<div class="viewcode-block" id="OptionData"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData">[docs]</a><span class="k">class</span> <span class="nc">OptionData</span><span class="p">:</span>
+<div class="viewcode-block" id="OptionData.__init__"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strictCheck</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor for OptionData.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            strictCheck(:obj:`bool`, optional): Whether to strictly check entries</span>
+<span class="sd">                made as options. Better to have it as True, else might cause</span>
+<span class="sd">                inconsistencies.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.OptionException`: If strictCheck is</span>
+<span class="sd">                not a Boolean Value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">strictCheck</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;strictCheck argument must be Boolean, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">strictCheck</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">strictCheck</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__banner</span> <span class="o">=</span> <span class="s2">&quot;Options&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__options</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__default_option</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__prompt</span> <span class="o">=</span> <span class="s2">&quot;Enter choice&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__strictCheck</span> <span class="o">=</span> <span class="n">strictCheck</span></div>
+
+<div class="viewcode-block" id="OptionData.setBanner"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.setBanner">[docs]</a>    <span class="k">def</span> <span class="nf">setBanner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bannerText</span><span class="o">=</span><span class="s2">&quot;Options&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the banner for the options.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bannerText(:obj:`str`, optional): Text to be the banner for the options.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.OptionException`: If bannerText is not</span>
+<span class="sd">                a valid String.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">bannerText</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bannerText</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__banner</span> <span class="o">=</span> <span class="n">bannerText</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__strictCheck</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;bannerText argument must be a valid string, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bannerText</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">bannerText</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="OptionData.getBanner"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.getBanner">[docs]</a>    <span class="k">def</span> <span class="nf">getBanner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the banner set for the options.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__banner</span></div>
+
+<div class="viewcode-block" id="OptionData.setPrompt"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.setPrompt">[docs]</a>    <span class="k">def</span> <span class="nf">setPrompt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Enter choice&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the prompt text for options.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            prompt(:obj:`str`, optional): Text to be the prompt for the options.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            OptionException: if prompt is not a valid String.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">prompt</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__prompt</span> <span class="o">=</span> <span class="n">prompt</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__strictCheck</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;prompt argument must be a valid string, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="OptionData.getPrompt"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.getPrompt">[docs]</a>    <span class="k">def</span> <span class="nf">getPrompt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the prompt for the options.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__prompt</span></div>
+
+<div class="viewcode-block" id="OptionData.addNewOption"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.addNewOption">[docs]</a>    <span class="k">def</span> <span class="nf">addNewOption</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optionText</span><span class="p">,</span> <span class="n">optionID</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a new option choice.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            optionText(:obj:`str`): Text to display with the Option.</span>
+<span class="sd">            optionID(:obj:`str` or :obj:`int`, optional): The ID to be associated</span>
+<span class="sd">                with this option. If not provided, one will be generated internally.</span>
+<span class="sd">            ``**kwargs`` : Additional Keyword arguments associated with option.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :obj:`str`: The optionID for this option. None if strictCheck is</span>
+<span class="sd">            disabled and option was not inserted.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.OptionException`: If optionID is not</span>
+<span class="sd">                a valid Integer or String. If optionText is not a valid String.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">optionID</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__strictCheck</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;optionID specified must be of either &quot;</span>
+                    <span class="s2">&quot;integer or string type, invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span>
+                    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionID</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">optionID</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">optionID</span><span class="p">:</span>
+            <span class="n">try_value</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">try_value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__options</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">try_value</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">:</span>
+                    <span class="n">try_value</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">optionID</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">try_value</span><span class="p">)</span>
+                    <span class="k">break</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">optionID</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">optionID</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">optionText</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">optionText</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">[</span><span class="n">optionID</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span> <span class="p">:</span> <span class="n">optionText</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__strictCheck</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;optionText argument must be a valid string, &quot;</span>
+                <span class="s2">&quot;invalid value : </span><span class="si">{}</span><span class="s2">(type : </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionText</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">optionText</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">optionID</span></div>
+
+<div class="viewcode-block" id="OptionData.setDefaultOption"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.setDefaultOption">[docs]</a>    <span class="k">def</span> <span class="nf">setDefaultOption</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optionID</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set a default option among the Options.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            optionID(:obj:`str`): The option ID to be set as default.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.OptionException`: If the option ID has</span>
+<span class="sd">                not been added as an option previously.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__default_option</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__strictCheck</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;optionID must be an among already added options, &quot;</span>
+                <span class="s2">&quot;use addNewOption to add the option first before setting it to default&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OptionData.getDefaultOption"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.getDefaultOption">[docs]</a>    <span class="k">def</span> <span class="nf">getDefaultOption</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the default option ID.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__default_option</span></div>
+
+<div class="viewcode-block" id="OptionData.getOptionText"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.getOptionText">[docs]</a>    <span class="k">def</span> <span class="nf">getOptionText</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optionID</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the Option Text for given ID.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            optionID(:obj:`str`): The ID for which to get option text.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :obj:`str`: Text for the Option.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.OptionException`: If the optionID</span>
+<span class="sd">                provided was not found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;optionID </span><span class="si">{}</span><span class="s2"> provided was not found among &quot;</span>
+                <span class="s2">&quot;options set&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionID</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="OptionData.getOptionArgs"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.getOptionArgs">[docs]</a>    <span class="k">def</span> <span class="nf">getOptionArgs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optionID</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return dictionary of additional keyword arguments saved with an option.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            optionID(:obj:`str`): The ID for which to return keyword arguments.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :obj:`dict`: Keyword Arguments.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :obj:`~takeMyOption.exceptions.OptionException`: If the optionID</span>
+<span class="sd">                provided was not found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">OptionException</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;optionID </span><span class="si">{}</span><span class="s2"> provided was not found among &quot;</span>
+                <span class="s2">&quot;options set&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">optionID</span><span class="p">))</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">optionID</span><span class="p">)])</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">args</span></div>
+
+<div class="viewcode-block" id="OptionData.getAllOptionIDs"><a class="viewcode-back" href="../../reference.html#takeMyOption.options.OptionData.getAllOptionIDs">[docs]</a>    <span class="k">def</span> <span class="nf">getAllOptionIDs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return all the option IDs set.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__options</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, dvaruas
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
