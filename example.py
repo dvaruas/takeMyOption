@@ -18,6 +18,6 @@ display_formatter = getDefaultDisplayFormatter(optionDataObj=option_obj)
 get_input = InputStrategies(prompt=option_obj.getPrompt())
 
 print(display_formatter.render(divider=" | ", leftBorder="|", rightBorder="|"))
-opt = get_input.inputAnOption(options=[read_option, movie_option, study_option, sleep_option],
-        showOptions=True, defaultInput=sleep_option)
+opt = get_input.inputAnOption(options=option_obj.getAllOptionIDs(),
+        showOptions=True, defaultInput=option_obj.getDefaultOption())
 print("\nSelected Option : {}".format(opt))

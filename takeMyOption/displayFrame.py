@@ -1,5 +1,3 @@
-import math
-
 from .exceptions import DisplayFrameException
 
 
@@ -10,31 +8,93 @@ class DisplayFrame:
         self.__padding = 1
         self.__row_indx = -1
 
-    def setPadding(self, padding_val):
-        if not isinstance(padding_val, int):
-            raise DisplayFrameException(self, "padding_val argument should be an integer, "
-                "invalid entry : {}(type : {})".format(padding_val, type(padding_val).__name__))
-        self.__padding = padding_val
+    def setPadding(self, paddingVal):
+        """Set padding value for the Display Frame.
+
+        Args:
+            paddingVal: padding value (Integer)
+
+        Raises:
+            DisplayFrameException: If paddingVal is not a positive integer.
+        """
+        if not isinstance(paddingVal, int):
+            raise DisplayFrameException(self, "paddingVal argument should be an integer, "
+                "invalid value : {}(type : {})".format(paddingVal, type(paddingVal).__name__))
+        elif paddingVal < 0:
+            raise DisplayFrameException(self, "paddingVal argument cannot be less than zero")
+        self.__padding = paddingVal
 
     def startFrameRow(self, showBorder=True, showDivider=True):
+        """Start a new row in the Display Frame.
+
+        Args:
+            showBorder: Determines whether to display Border for the row. (Boolean, default : True)
+            showDivider: Determines whether to display divider between rows. (Boolean, default : True)
+
+        Raises:
+            DisplayFrameException: If showBorder or showDivider is not a boolean value.
+        """
+        if not isinstance(showBorder, bool):
+            raise DisplayFrameException(self, "showBorder argument should be a boolean, "
+                "invalid value : {}(type : {})".format(showBorder, type(showBorder).__name__))
+        if not isinstance(showDivider, bool):
+            raise DisplayFrameException(self, "showDivider argument should be a boolean, "
+                "invalid value : {}(type : {})".format(showDivider, type(showDivider).__name__))
         self.__row_indx += 1
         self.__rows[self.__row_indx] = {"data" : [], "showBorder" : showBorder,
             "showDivider" : showDivider}
         self.__current_row = []
 
     def frameData(self, data, align="left", colSpan=1):
-        self.__current_row.append([data, align, colSpan])
+        """Add a data cell to the Display Frame Row.
+
+        Args:
+            data: The Raw data which is to be added to the cell. (String)
+            align: Alignment choice for cell data. (String, default : "left")
+                   Valid align choices :
+                   "left" : left-align the data
+                   "right" : right-align the data
+                   "center" : center-align the data
+                   "fill" : fill the complete cell width with data repeated
+            colSpan: Number of columns the cell spans for. (Integer, default : 1)
+
+        Raises:
+            DisplayFrameException: If align is not a valid keyword or
+                                   if colSpan is not a positive Integer
+        """
+        if align not in ["left", "right", "center", "fill"]:
+            raise DisplayFrameException(self, "align argument has to be one among"
+                " these options - left, right, center, fill. Invalid value : "
+                "{}(type : {})".format(align, type(align).__name__))
+        if not isinstance(colSpan, int) or colSpan <= 0:
+            raise DisplayFrameException(self, "colSpan argument has to be a positive"
+                " integer value. Invalid value : {}(type : {})"
+                .format(colSpan, type(colSpan).__name__))
+        self.__current_row.append([str(data), align, colSpan])
 
     def endFrameRow(self):
+        """End a row in the Display Frame."""
         if self.__current_row:
             self.__rows[self.__row_indx]["data"] = self.__current_row
 
     def insertBlankRow(self, colSpan=1):
+        """Insert a completely Blank Row.
+
+        Args:
+            colSpan: Number of columns the cell spans for. (Integer, default : 1)
+
+        Raises:
+            DisplayFrameException: If colSpan is not a positive Integer
+        """
+        if not isinstance(colSpan, int) or colSpan <= 0:
+            raise DisplayFrameException(self, "colSpan argument has to be a positive"
+                " integer value. Invalid value : {}(type : {})"
+                .format(colSpan, type(colSpan).__name__))
         self.__row_indx += 1
         self.__rows[self.__row_indx] = {"data" : [(" ", "fill", colSpan)],
             "showBorder" : False, "showDivider" : False}
 
-    def measureColumnWidths(self, dividerLen):
+    def __measureColumnWidths(self, dividerLen):
         __columnWidths = {}
         __span = 1
         while True:
@@ -59,12 +119,26 @@ class DisplayFrame:
         return __columnWidths
 
     def render(self, divider=" ", leftBorder="", rightBorder=""):
+        """Renders the complete Display Frame.
+
+        Args:
+            divider: The divider to use between columns in Frame. (String, default : " ")
+            leftBorder : The left-most border for the Frame. (String, default : "")
+            rightBorder : The right-most border for the Frame. (String, default : "")
+
+        Returns:
+            The complete Display Frame to be printed. (String)
+
+        Raises:
+            DisplayFrameException: If either of divider, leftBorder or rightBorder
+                                   is not a String.
+        """
         for (__n, __t) in [("divider", divider), ("leftBorder", leftBorder), ("rightBorder", rightBorder)]:
             if not isinstance(__t, str):
                 raise DisplayFrameException(self, "{} argument should be a String,"
-                    " invalid entry : {}(type : {})".format(__n, __t, type(__t).__name__))
+                    " invalid value : {}(type : {})".format(__n, __t, type(__t).__name__))
 
-        __col_widths = self.measureColumnWidths(dividerLen=len(divider))
+        __col_widths = self.__measureColumnWidths(dividerLen=len(divider))
 
         __row_strings = []
         for __row_indx in sorted(self.__rows.keys()):
@@ -98,6 +172,7 @@ class DisplayFrame:
         return "\n".join(__row_strings)
 
     def clearFrame(self):
+        """Clear all data from the current Display Frame."""
         self.__rows = {}
         self.__current_row = []
         self.__row_indx = -1

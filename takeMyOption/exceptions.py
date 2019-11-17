@@ -9,12 +9,15 @@ class BaseException(Exception):
 
 
 class OptionException(BaseException):
+    """Exception raised when there is any problem with setting of options."""
     pass
 
 
 class DisplayFrameException(BaseException):
+    """Exception raised when there is any problem while building Display Frame."""
     pass
 
 
 class InputStrategiesException(BaseException):
+    """Exception raised when there is any problem regarding taking input from user."""
     pass

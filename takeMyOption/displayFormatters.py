@@ -4,6 +4,14 @@ from .options import OptionData
 
 
 def getDefaultDisplayFormatter(optionDataObj):
+    """Return the default format for displaying Options.
+
+    Args:
+        optionDataObj: instance of OptionData class
+
+    Returns:
+        An instance of DisplayFrame class containing the format for display.
+    """
     displayFormat = DisplayFrame()
 
     if not isinstance(optionDataObj, OptionData):
