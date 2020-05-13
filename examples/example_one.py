@@ -2,7 +2,9 @@ from takeMyOption.displayFormatters import getDefaultDisplayFormatter
 from takeMyOption.inputStrategies import InputStrategies
 from takeMyOption.options import OptionData
 
-"""Output of a run :
+"""This example shows how the default Display Format can be used to show Options.
+
+Output of a run :
 
    Options at Home
 | ------------------ |
